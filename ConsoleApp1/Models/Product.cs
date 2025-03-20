@@ -1,5 +1,6 @@
 ﻿namespace MyApp.Models;
 
+
 public interface IProduct
 {
     string Name { get; }
@@ -14,7 +15,7 @@ public class Product : IProduct
 {
     public string Name { get; private set; }
     public decimal Price { get; private set; }
-    public int Stock { get; private set; }
+    public int Stock { get; set; }
     
     public Product(string name, decimal price, int stock)
     {
