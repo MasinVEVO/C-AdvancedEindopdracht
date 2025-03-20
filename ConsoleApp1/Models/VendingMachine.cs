@@ -1,10 +1,11 @@
-﻿using MyApp.Behavioral.State;
+﻿using MyApp.Models;
+using VendingMachineApp.Models;
 using System;
 using ConsoleApp1.Patterns.Creational.Singleton;
-using MyApp.Models;
 
 namespace VendingMachineApp.Models
 {
+    
     public class VendingMachine
     {
         public IVendingMachineState CurrentState { get; private set; }
@@ -13,38 +14,37 @@ namespace VendingMachineApp.Models
 
         public VendingMachine()
         {
-            CurrentState = new WaitingForMoneyState(); // Start in the "Waiting for Money" state
+            CurrentState = new WaitingForMoneyState(); // Start in de "Wachten op geld"-status
             Balance = 0;
             SelectedProduct = null;
         }
-
+        
         public void SetState(IVendingMachineState newState)
         {
             CurrentState = newState;
-            Console.WriteLine($"🔄 State changed to: {newState.GetType().Name}");
+            Console.WriteLine($"🔄 Status gewijzigd naar: {newState.GetType().Name}");
         }
-
+        
         public void InsertMoney(decimal amount)
         {
             CurrentState.InsertMoney(this, amount);
         }
-
+        
         public void SelectProduct(string productName)
         {
             var product = InventoryManager.Instance.GetProduct(productName);
 
             if (product == null)
             {
-                Console.WriteLine($"{productName} is not available in the machine.");
+                Console.WriteLine($"❌ {productName} is niet beschikbaar in de automaat.");
                 return;
             }
-
             CurrentState.SelectProduct(this, product);
         }
-
+        
         public void DispenseProduct()
         {
             CurrentState.DispenseProduct(this);
         }
     }
-    }
+}

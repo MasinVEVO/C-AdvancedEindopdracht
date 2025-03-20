@@ -1,6 +1,9 @@
 ﻿namespace MyApp.Behavioral.Strategy;
 
-public class PaymentStrategy
+public interface IPaymentStrategy
 {
-    
+    void Pay(decimal amount);
 }
+
+
+

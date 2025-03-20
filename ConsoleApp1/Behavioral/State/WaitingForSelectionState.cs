@@ -10,7 +10,7 @@ namespace MyApp.Behavioral.State
         public void InsertMoney(VendingMachine vendingMachine, decimal amount)
         {
             vendingMachine.Balance += amount;
-            Console.WriteLine($"💵 {amount} inserted. Current balance: {vendingMachine.Balance}");
+            Console.WriteLine($" {amount} inserted. Current balance: {vendingMachine.Balance}");
         }
 
         public void SelectProduct(VendingMachine vendingMachine, Product product)
