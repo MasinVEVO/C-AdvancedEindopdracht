@@ -1,6 +1,7 @@
 ﻿using MyApp.Models;
 using System;
 using System.Collections.Generic;
+using MyApp.Behavioral.Observer;
 using VendingMachineApp.Models;
 
 namespace ConsoleApp1.Patterns.Creational.Singleton
@@ -13,10 +14,12 @@ namespace ConsoleApp1.Patterns.Creational.Singleton
             new(() => new InventoryManager());
 
         private readonly Dictionary<string, Product> _inventory;
+        private readonly StockNotifier _notifier;
 
         private InventoryManager()
         {
             _inventory = new Dictionary<string, Product>();
+            _notifier = new StockNotifier();
         }
 
         public static InventoryManager Instance => _instance.Value;

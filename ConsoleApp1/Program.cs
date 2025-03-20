@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace MyApp
+﻿namespace ConsoleApp1
 {
     internal class Program
     {

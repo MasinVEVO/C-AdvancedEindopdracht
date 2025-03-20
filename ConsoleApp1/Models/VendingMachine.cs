@@ -36,7 +36,7 @@ namespace VendingMachineApp.Models
 
             if (product == null)
             {
-                Console.WriteLine($"❌ {productName} is niet beschikbaar in de automaat.");
+                Console.WriteLine($" {productName} is niet beschikbaar in de automaat.");
                 return;
             }
             CurrentState.SelectProduct(this, product);
