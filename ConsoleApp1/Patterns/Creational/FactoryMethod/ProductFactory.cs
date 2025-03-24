@@ -4,7 +4,7 @@ using MyApp.Models;
 
 
 namespace MyApp.Patterns.Creational.FactoryMethod;
-public static class ProductFactory
+public class ProductFactory
 {
     public static IProduct CreateProduct(string type)
     {

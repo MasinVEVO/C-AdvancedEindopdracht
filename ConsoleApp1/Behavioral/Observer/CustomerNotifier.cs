@@ -12,6 +12,7 @@ namespace ConsoleApp1.Behavioral.Observer
         {
             _customerName = customerName;
         }
+        
 
         public void Update(string productName, int stock)
         {
