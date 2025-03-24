@@ -1,6 +1,6 @@
 ﻿namespace MyApp.Behavioral.Command;
 
-public class VendingMachineCommands
+public interface ICommand
 {
-    
+    void Execute();
 }

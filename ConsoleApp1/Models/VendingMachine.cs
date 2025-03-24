@@ -42,9 +42,14 @@ namespace VendingMachineApp.Models
             CurrentState.SelectProduct(this, product);
         }
         
-        public void DispenseProduct()
+        public void DispenseProduct(string _product)
         {
-            CurrentState.DispenseProduct(this);
+            Console.WriteLine($"Dispensing product: {_product}");
+        }
+
+        public void RefillProduct(string product, int quantity)
+        {
+            Console.WriteLine($"Refilling product: {product} with {quantity} items");
         }
     }
 }
