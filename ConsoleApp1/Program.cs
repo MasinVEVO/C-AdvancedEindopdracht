@@ -1,5 +1,5 @@
-﻿using MyApp.Behavioral.Command;
-using VendingMachineApp.Models;
+﻿using ConsoleApp1.Structural.Facade;
+using MyApp.Behavioral.Command;
 
 namespace ConsoleApp1
 {
@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-           
+            
         }
     }
 }   

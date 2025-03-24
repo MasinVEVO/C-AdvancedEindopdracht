@@ -1,0 +1,28 @@
+﻿using VendingMachineApp.Models;
+
+namespace ConsoleApp1.Structural.Facade;
+
+public class VendingMachineFacade
+{
+    private readonly VendingMachine _vendingMachine;
+    private readonly PaymentProcessor _paymentProcessor;
+
+    public VendingMachineFacade()
+    {
+        _vendingMachine = new VendingMachine();
+        _paymentProcessor = new PaymentProcessor();
+    }
+
+    public void PurchaseProduct(string productCode, decimal amount)
+    {
+        _vendingMachine.SelectProduct(productCode);
+        if (_paymentProcessor.ProcessPayment(amount))
+        {
+            _vendingMachine.DispenseProduct(productCode);
+        }
+        else
+        {
+            Console.WriteLine("Betaling mislukt.");
+        }
+    }
+}

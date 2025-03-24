@@ -11,6 +11,8 @@ namespace VendingMachineApp.Models
         public IVendingMachineState CurrentState { get; private set; }
         public decimal Balance { get; set; }
         public Product? SelectedProduct { get; set; }
+        
+        private string? _selectedProductCode { get; set; }
 
         public VendingMachine()
         {
@@ -41,10 +43,19 @@ namespace VendingMachineApp.Models
             }
             CurrentState.SelectProduct(this, product);
         }
-        
+
         public void DispenseProduct(string _product)
         {
-            Console.WriteLine($"Dispensing product: {_product}");
+            if (!string.IsNullOrEmpty(_selectedProductCode))
+            {
+                Console.WriteLine($"Product {_selectedProductCode} is uitgegeven.");
+                _selectedProductCode = null;
+            }
+            else
+            {
+                Console.WriteLine("Geen product geselecteerd.");
+            }
+            
         }
 
         public void RefillProduct(string product, int quantity)
