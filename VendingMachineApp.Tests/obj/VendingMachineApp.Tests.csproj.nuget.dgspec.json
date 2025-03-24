@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\VendingMachineApp.Tests\\VendingMachineApp.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\VendingMachineApp.Tests\\VendingMachineApp.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-        "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\VendingMachineApp.Tests\\VendingMachineApp.Tests.csproj",
+        "projectName": "VendingMachineApp.Tests",
+        "projectPath": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\VendingMachineApp.Tests\\VendingMachineApp.Tests.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Gebruiker\\RiderProjects\\VendingMachineSystem\\ConsoleApp1\\VendingMachineApp.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,16 +44,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "NUnit": {
-              "target": "Package",
-              "version": "[4.3.2, )"
-            },
-            "NUnit3TestAdapter": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

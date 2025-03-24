@@ -1,23 +1,12 @@
-﻿using VendingMachineApp.Models;
-using System;
-using MyApp.Models;
+﻿using MyApp.Models;
 
-
-namespace MyApp.Patterns.Creational.FactoryMethod;
-public class ProductFactory
+namespace ConsoleApp1.Patterns.Creational.FactoryMethod
 {
-    public static IProduct CreateProduct(string type)
+    public class ProductFactory
     {
-        switch (type.ToLower())
+        public IProduct CreateProduct(string name, decimal price, int quantity)
         {
-            case "cola":
-                return new Product("Coca-Cola", 2.00m, 10);
-            case "chips":
-                return new Product("Chips", 1.50m, 5);
-            case "water":
-                return new Product("Water", 1.00m, 8);
-            default:
-                throw new ArgumentException($" Onbekend producttype: {type}");
+            return new Product(name, price, quantity);
         }
     }
 }
