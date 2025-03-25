@@ -1,9 +1,11 @@
-﻿using ConsoleApp1.BonusPatterns.Command;
+﻿using System;
+using ConsoleApp1.BonusPatterns.Command;
 using ConsoleApp1.Concurrency.ProducerConsumer;
 using ConsoleApp1.Concurrency.ThreadPool;
 using ConsoleApp1.Patterns.Creational.Singleton;
 using MyApp.Models;
 using VendingMachineApp.Models;
+using VendingMachineApp.Services;
 using VendingMachineApp.Patterns.Structural.Facade;
 
 namespace ConsoleApp1
@@ -12,8 +14,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            // ✅ Vooraf gedefinieerde producten voor initiële data
+            InventoryManager.Instance.AddProduct(new Product("Coca-Cola", 2.50m, 10));
+            InventoryManager.Instance.AddProduct(new Product("Sprite", 2.20m, 8));
+            InventoryManager.Instance.AddProduct(new Product("Chips", 1.80m, 15));
+            InventoryManager.Instance.AddProduct(new Product("Snoep", 1.00m, 20));
+            InventoryManager.Instance.AddProduct(new Product("Water", 1.50m, 12));
+
             var vendingMachine = new VendingMachine();
             var facade = new VendingMachineFacade();
+            RefundCommand refundCommand = null;
             var orderQueue = new OrderProcessingQueue(10);
             var taskManager = new TaskManager(10);
 
@@ -70,7 +80,7 @@ namespace ConsoleApp1
                         Console.Write("Voer de hoeveelheid in: ");
                         if (int.TryParse(Console.ReadLine(), out int quantity))
                         {
-                            InventoryManager.Instance.AddProduct(new Product(refillProduct, quantity, 1.0m)); // Example price
+                            vendingMachine.RefillProduct(refillProduct, quantity);
                         }
                         else
                         {
@@ -81,7 +91,7 @@ namespace ConsoleApp1
                     case "6":
                         if (vendingMachine.SelectedProduct != null)
                         {
-                            var refundCommand = new RefundCommand(vendingMachine);
+                            refundCommand = new RefundCommand(vendingMachine);
                             refundCommand.Execute();
                         }
                         else

@@ -1,8 +1,5 @@
 ﻿using MyApp.Models;
-using System;
-using System.Collections.Generic;
 using MyApp.Behavioral.Observer;
-using VendingMachineApp.Models;
 
 namespace ConsoleApp1.Patterns.Creational.Singleton
     

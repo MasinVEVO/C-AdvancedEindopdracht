@@ -2,8 +2,7 @@
 
 namespace VendingMachineApp.Models
 {
-    using System;
-    using VendingMachineApp.Models; // Ensure this matches the namespace of your Product class
+    using System; 
 
     public interface IVendingMachineState
     {
