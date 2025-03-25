@@ -1,4 +1,4 @@
-﻿# TVending Machine System
+﻿# Vending Machine System
 ## Doel van de Opdracht.
 Het doel van deze opdracht is om je kennis en begrip van Design Patterns te verdiepen door deze concreet toe te passen in een C#-toepassing. Je krijgt de mogelijkheid om zelfstandig te kiezen hoe je Design Patterns implementeert, met een focus op het tonenvan inzicht en creativiteit in je uitwerking.
 
