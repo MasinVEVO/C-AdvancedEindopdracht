@@ -5,7 +5,7 @@ public interface IProduct
 {
     string Name { get; }
     decimal Price { get; }
-    int Stock { get; }
+    decimal Stock { get; }
     void ReduceStock();
 }
 
@@ -15,9 +15,9 @@ public class Product : IProduct
 {
     public string Name { get; private set; }
     public decimal Price { get; private set; }
-    public int Stock { get; private set; }
+    public decimal Stock { get; private set; }
     
-    public Product(string name, decimal price, int stock)
+    public Product(string name, decimal price, decimal stock)
     {
         Name = name;
         Price = price;

@@ -6,9 +6,9 @@ public class VendingMachineMemento
 {
     public decimal Balance { get; }
     public Product? SelectedProduct { get; }
-    public int ProductStock { get; }
+    public decimal ProductStock { get; }
 
-    public VendingMachineMemento(decimal balance, Product? selectedProduct, int productStock)
+    public VendingMachineMemento(decimal balance, Product? selectedProduct, decimal productStock)
     {
         Balance = balance;
         SelectedProduct = selectedProduct;

@@ -2,6 +2,7 @@
 using ConsoleApp1.Concurrency.ProducerConsumer;
 using ConsoleApp1.Concurrency.ThreadPool;
 using ConsoleApp1.Patterns.Creational.Singleton;
+using MyApp.Models;
 using VendingMachineApp.Models;
 using VendingMachineApp.Patterns.Structural.Facade;
 
@@ -11,7 +12,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-             var vendingMachine = new VendingMachine();
+            var vendingMachine = new VendingMachine();
             var facade = new VendingMachineFacade();
             var orderQueue = new OrderProcessingQueue(10);
             var taskManager = new TaskManager(10);
@@ -49,7 +50,6 @@ namespace ConsoleApp1
                         {
                             Console.WriteLine("Ongeldig bedrag.");
                         }
-
                         break;
 
                     case "3":
@@ -70,13 +70,12 @@ namespace ConsoleApp1
                         Console.Write("Voer de hoeveelheid in: ");
                         if (int.TryParse(Console.ReadLine(), out int quantity))
                         {
-                            vendingMachine.RefillProduct(refillProduct, quantity);
+                            InventoryManager.Instance.AddProduct(new Product(refillProduct, quantity, 1.0m)); // Example price
                         }
                         else
                         {
                             Console.WriteLine("Ongeldige hoeveelheid.");
                         }
-
                         break;
 
                     case "6":

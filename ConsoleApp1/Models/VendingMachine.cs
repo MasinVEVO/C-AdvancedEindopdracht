@@ -65,7 +65,7 @@ namespace VendingMachineApp.Models
         
         public VendingMachineMemento SaveState()
         {
-            int currentStock = SelectedProduct?.Stock ?? 0;
+            decimal currentStock = SelectedProduct?.Stock ?? 0;
             return new VendingMachineMemento(Balance, SelectedProduct, currentStock);
         }
 
