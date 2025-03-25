@@ -18,5 +18,10 @@ namespace ConsoleApp1.Behavioral.Observer
         {
             Console.WriteLine($" {_customerName}, update: {productName} stock is now {stock}.");
         }
+
+        public void OnStockChanged(string productName, int newStock)
+        {
+            Console.WriteLine($" {_customerName}, update: {productName} stock is now {newStock}.");
+        }
     }
 }

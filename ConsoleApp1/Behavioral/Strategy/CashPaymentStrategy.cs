@@ -1,17 +1,16 @@
 ﻿namespace MyApp.Behavioral.Strategy;
 
-public class CreditCardPaymentStrategy : IPaymentStrategy
+public class CashPaymentStrategy : IPaymentStrategy
 {
     public void Pay(decimal amount)
     {
-        Console.WriteLine($"Paying {amount} using Credit Card.");
+        Console.WriteLine($"Paying {amount} using Cash.");
     }
-
+    
     public bool ProcessPayment(decimal amountPaid, decimal productPrice)
     {
         return amountPaid >= productPrice;
     }
-    
     
     
 }
