@@ -35,7 +35,7 @@ namespace VendingMachineApp.Models
         public override void InsertMoney(VendingMachine vendingMachine, decimal amount)
         {
             vendingMachine.Balance += amount;
-            Console.WriteLine($"💰 Geld toegevoegd: €{amount}. Nieuw saldo: €{vendingMachine.Balance}");
+            Console.WriteLine($" Geld toegevoegd: €{amount}. Nieuw saldo: €{vendingMachine.Balance}");
             vendingMachine.SetState(new SelectingProductState());
         }
     }

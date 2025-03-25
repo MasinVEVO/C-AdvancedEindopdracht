@@ -17,7 +17,7 @@ namespace VendingMachineApp.Tests
             var facade = new VendingMachineFacade();
 
             Assert.DoesNotThrow(() => facade.StartVendingMachine(),
-                "✅ VendingMachineFacade start correct zonder fouten.");
+                " VendingMachineFacade start correct zonder fouten.");
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace VendingMachineApp.Tests
             var paymentProcessor = new PaymentProcessor();
             bool result = paymentProcessor.ProcessPayment(10.00m);
 
-            Assert.That(result, Is.True, "✅ PaymentProcessor verwerkt betaling correct.");
+            Assert.That(result, Is.True, " PaymentProcessor verwerkt betaling correct.");
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace VendingMachineApp.Tests
             var paymentProcessor = new PaymentProcessor();
             bool result = paymentProcessor.ProcessPayment(0.00m);
 
-            Assert.That(result, Is.False, "✅ PaymentProcessor herkent ongeldige betaling correct.");
+            Assert.That(result, Is.False, " PaymentProcessor herkent ongeldige betaling correct.");
         }
 
         // ========================== Decorator Pattern Tests ==========================
@@ -55,7 +55,7 @@ namespace VendingMachineApp.Tests
             var product = new BasicProduct();
 
             Assert.That(product.GetPrice(), Is.EqualTo(10.00m),
-                "✅ BasicProduct heeft de verwachte prijs van €10.");
+                " BasicProduct heeft de verwachte prijs van €10.");
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace VendingMachineApp.Tests
             var discountedProduct = new DiscountedProductDecorator(product);
 
             Assert.That(discountedProduct.GetPrice(), Is.EqualTo(5.00m),
-                "✅ DiscountedProductDecorator past korting correct toe.");
+                " DiscountedProductDecorator past korting correct toe.");
         }
 
         [Test]
@@ -75,7 +75,7 @@ namespace VendingMachineApp.Tests
             var premiumProduct = new PremiumProductDecorator(product);
 
             Assert.That(premiumProduct.GetPrice(), Is.EqualTo(30.00m),
-                "✅ PremiumProductDecorator past premiumprijs correct toe.");
+                " PremiumProductDecorator past premiumprijs correct toe.");
         }
 
         // ========================== Adapter Pattern Test ==========================
@@ -85,7 +85,7 @@ namespace VendingMachineApp.Tests
             var paymentService = new PaymentService();
             bool result = paymentService.ProcessPayment(10.00m, 2.00m);
 
-            Assert.That(result, Is.True, "✅ PaymentService verwerkt betaling correct.");
+            Assert.That(result, Is.True, " PaymentService verwerkt betaling correct.");
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace VendingMachineApp.Tests
             var paymentService = new PaymentService();
             bool result = paymentService.ProcessPayment(1.00m, 5.00m);
 
-            Assert.That(result, Is.False, "✅ PaymentService herkent ongeldige betaling correct.");
+            Assert.That(result, Is.False, " PaymentService herkent ongeldige betaling correct.");
         }
     }
 }

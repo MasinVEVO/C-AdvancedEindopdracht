@@ -20,7 +20,7 @@ namespace VendingMachineApp.Tests
 
             customerNotifier.OnStockChanged(product.Name, 8);
 
-            Assert.Pass("✅ CustomerNotifier werkt correct bij voorraadwijziging.");
+            Assert.Pass(" CustomerNotifier werkt correct bij voorraadwijziging.");
         }
 
         // ========================== State Pattern Test ==========================
