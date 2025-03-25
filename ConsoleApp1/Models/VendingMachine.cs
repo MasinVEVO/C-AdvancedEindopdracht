@@ -85,5 +85,10 @@ namespace VendingMachineApp.Models
 
             Console.WriteLine($" Saldo: €{Balance} | Product: {productInfo}");
         }
+
+        public VendingMachineMemento CreateMemento()
+        {
+            return new VendingMachineMemento(Balance, SelectedProduct, SelectedProduct?.Stock ?? 0);
+        }
     }
 }

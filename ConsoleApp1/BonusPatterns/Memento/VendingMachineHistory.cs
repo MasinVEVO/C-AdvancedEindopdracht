@@ -19,4 +19,9 @@ public class VendingMachineHistory
         Console.WriteLine("Geen eerdere status om te herstellen");
         return null;
     }
+
+    public VendingMachineMemento GetLastState()
+    {
+        throw new NotImplementedException();
+    }
 }

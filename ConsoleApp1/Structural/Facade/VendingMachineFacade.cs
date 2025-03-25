@@ -1,6 +1,8 @@
-﻿using VendingMachineApp.Models;
+﻿using ConsoleApp1.Structural.Facade;
+using VendingMachineApp.Models;
 
-namespace ConsoleApp1.Structural.Facade;
+
+namespace VendingMachineApp.Patterns.Structural.Facade;
 
 public class VendingMachineFacade
 {
@@ -24,5 +26,10 @@ public class VendingMachineFacade
         {
             Console.WriteLine("Betaling mislukt.");
         }
+    }
+
+    public void StartVendingMachine()
+    {
+        Console.WriteLine("Vending machine is gestart.");
     }
 }

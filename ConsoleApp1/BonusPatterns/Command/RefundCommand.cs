@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.Patterns.Creational.Singleton;
 using MyApp.Models;
+using VendingMachineApp.Models;
 using VendingMachineApp.Services;
 
 namespace ConsoleApp1.BonusPatterns.Command;
@@ -18,7 +19,12 @@ public class RefundCommand : ICommand
         _inventoryManager = InventoryManager.Instance;
         _paymentService = new PaymentService();
     }
-    
+
+    public RefundCommand(VendingMachine vendingMachine)
+    {
+        throw new NotImplementedException();
+    }
+
     public void Execute()
     {
         var product = _inventoryManager.GetProduct(_productName);

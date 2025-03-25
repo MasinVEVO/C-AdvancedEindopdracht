@@ -16,5 +16,7 @@ namespace VendingMachineApp.Services
             Console.WriteLine($" Onvoldoende saldo. Betaald: €{amountPaid:F2}, vereist: €{productPrice:F2}");
             return false;
         }
+        
+        
     }
 }

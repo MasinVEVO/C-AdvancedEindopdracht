@@ -38,12 +38,21 @@ public class OrderProcessingQueue
         }
     }
 
-    public void Stop()
+    private void Stop()
     {
         _taskQueue.CompleteAdding();
         foreach (var worker in _workers)
         {
             worker.Join();
         }
+    }
+
+    public void ProcessTasks()
+    {
+        while (_taskQueue.Count > 0)
+        {
+            Thread.Sleep(100); // Sleep for a short period to avoid busy waiting
+        }
+        Stop();
     }
 }
