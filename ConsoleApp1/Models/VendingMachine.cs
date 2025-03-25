@@ -34,6 +34,7 @@ namespace VendingMachineApp.Models
         public void SelectProduct(string productName)
         {
             var product = InventoryManager.Instance.GetProduct(productName);
+            SelectedProduct = InventoryManager.Instance.GetProduct(productName);
 
             if (product == null)
             {

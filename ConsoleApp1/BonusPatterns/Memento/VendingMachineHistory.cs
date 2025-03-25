@@ -22,6 +22,12 @@ public class VendingMachineHistory
 
     public VendingMachineMemento GetLastState()
     {
-        throw new NotImplementedException();
+        if (_history.Count > 0)
+        {
+            return _history.Peek();
+        }
+
+        Console.WriteLine("No previous state to retrieve");
+        return null;
     }
 }

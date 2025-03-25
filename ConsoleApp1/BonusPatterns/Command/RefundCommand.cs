@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Patterns.Creational.Singleton;
+﻿using System.Diagnostics;
+using ConsoleApp1.Patterns.Creational.Singleton;
 using MyApp.Models;
 using VendingMachineApp.Models;
 using VendingMachineApp.Services;
@@ -22,7 +23,11 @@ public class RefundCommand : ICommand
 
     public RefundCommand(VendingMachine vendingMachine)
     {
-        throw new NotImplementedException();
+        Debug.Assert(vendingMachine.SelectedProduct != null, "vendingMachine.SelectedProduct != null");
+        _productName = vendingMachine.SelectedProduct.Name;
+        _amountRefunded = vendingMachine.SelectedProduct.Price;
+        _inventoryManager = InventoryManager.Instance;
+        _paymentService = new PaymentService();
     }
 
     public void Execute()
@@ -38,6 +43,7 @@ public class RefundCommand : ICommand
             Console.WriteLine($"Product {_productName} is niet gevonden in de inventaris.");
         }
     }
+    
 
     public void Undo()
     {
