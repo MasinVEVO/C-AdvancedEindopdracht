@@ -36,7 +36,7 @@ namespace VendingMachineApp.Models
             var product = InventoryManager.Instance.GetProduct(productName);
             SelectedProduct = InventoryManager.Instance.GetProduct(productName);
 
-            if (product == null)
+            if (string.IsNullOrEmpty(productName))
             {
                 Console.WriteLine($" {productName} is niet beschikbaar in de automaat.");
                 return;

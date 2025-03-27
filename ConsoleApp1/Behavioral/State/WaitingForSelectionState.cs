@@ -3,6 +3,10 @@ using MyApp.Models;
 using VendingMachineApp.Models;
 
 namespace MyApp.Behavioral.State
+
+// State Pattern beheert interne status van vendingMachine automatisch tijdens interacties zoals:
+// vendingMachine.InsertMoney(), vendingMachine.SelectProduct(), vendingMachine.DispenseProduct()
+
 {
     public class WaitingForSelectionState : IVendingMachineState
     {

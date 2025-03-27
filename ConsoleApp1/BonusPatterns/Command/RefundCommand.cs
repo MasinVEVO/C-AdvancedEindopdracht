@@ -6,6 +6,9 @@ using VendingMachineApp.Services;
 
 namespace ConsoleApp1.BonusPatterns.Command;
 
+// Command Pattern om acties te encapsuleren (zoals refund).
+// Je voert het commando uit zonder details te hoeven kennen.
+
 public class RefundCommand : ICommand
 {
     private readonly string _productName;

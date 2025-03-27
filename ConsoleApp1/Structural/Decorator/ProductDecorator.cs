@@ -18,4 +18,6 @@ public class ProductDecorator : IProduct
     {
         return _product.GetPrice();
     }
+
+    public string Name { get; set; }
 }

@@ -2,6 +2,9 @@
 
 namespace ConsoleApp1.Concurrency.ThreadPool;
 
+// ThreadPool Pattern voor parallelle verwerking van taken,
+// zorgt voor betere prestaties en efficiënt gebruik van resources.
+
 public class PaymentProcessingTask : IThreadPoolTask
 {
     private readonly decimal _amountPaid;

@@ -2,6 +2,9 @@
 
 namespace ConsoleApp1.Concurrency.ProducerConsumer;
 
+// Producer-Consumer Pattern gebruikt voor het beheren en verwerken van bestellingen.
+// Taken worden in de wachtrij gezet en asynchroon afgehandeld.
+
 public class OrderingProcessingTask : IConsumerTask
 {
     private readonly string _productName;

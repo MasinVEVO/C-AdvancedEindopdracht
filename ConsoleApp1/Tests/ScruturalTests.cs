@@ -51,7 +51,7 @@ namespace VendingMachineApp.Tests
         [Test]
         public void BasicProduct_ShouldHaveCorrectPrice()
         {
-            var product = new BasicProduct();
+            var product = new BasicProduct("Product Name", 10.00m);
 
             Assert.That(product.GetPrice(), Is.EqualTo(10.00m),
                 " BasicProduct heeft de verwachte prijs van €10.");
@@ -60,7 +60,7 @@ namespace VendingMachineApp.Tests
         [Test]
         public void DiscountedProductDecorator_ShouldApplyDiscountCorrectly()
         {
-            var product = new BasicProduct();
+            var product = new BasicProduct("Product Name", 10.00m);
             var discountedProduct = new DiscountedProductDecorator(product);
 
             Assert.That(discountedProduct.GetPrice(), Is.EqualTo(5.00m),
@@ -70,7 +70,7 @@ namespace VendingMachineApp.Tests
         [Test]
         public void PremiumProductDecorator_ShouldApplyPremiumFeaturesCorrectly()
         {
-            var product = new BasicProduct();
+            var product = new BasicProduct("Product Name", 10.00m);
             var premiumProduct = new PremiumProductDecorator(product);
 
             Assert.That(premiumProduct.GetPrice(), Is.EqualTo(30.00m),

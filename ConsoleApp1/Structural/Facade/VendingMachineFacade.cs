@@ -2,6 +2,9 @@
 
 namespace ConsoleApp1.Structural.Facade;
 
+// Facade Pattern om complexiteit te verminderen. 
+// Alle ingewikkelde logica van Vending Machine gebruik je via een simpele interface (Facade).
+
 public class VendingMachineFacade
 {
     private readonly VendingMachine _vendingMachine;

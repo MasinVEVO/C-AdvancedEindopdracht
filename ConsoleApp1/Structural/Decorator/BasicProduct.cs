@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.Structural.Decorator;
 
-public class BasicProduct : IProduct
+public class BasicProduct(string? productName, decimal @decimal) : IProduct
 {
     public string GetDescription()
     { 
@@ -11,4 +11,6 @@ public class BasicProduct : IProduct
     {
         return 10.0m;
     }
+
+    public string Name { get; set; }
 }

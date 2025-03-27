@@ -15,4 +15,9 @@ public class PremiumProductDecorator : ProductDecorator
     {
         return _product.GetPrice() + 20.0m;
     }
+
+    public string GetName()
+    {
+        return _product.Name;
+    }
 }

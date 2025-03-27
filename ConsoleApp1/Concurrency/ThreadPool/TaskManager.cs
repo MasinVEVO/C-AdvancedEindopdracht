@@ -74,4 +74,9 @@ public class TaskManager
             _action();
         }
     }
+
+    public void Stop()
+    {
+        throw new NotImplementedException();
+    }
 }

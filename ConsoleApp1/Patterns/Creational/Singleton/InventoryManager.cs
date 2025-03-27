@@ -4,7 +4,9 @@ using MyApp.Behavioral.Observer;
 namespace ConsoleApp1.Patterns.Creational.Singleton
     
 {
-    // Singleton for inventory management in the vending machine
+    
+    // Singleton Pattern gebruik je hier via InventoryManager.Instance
+    // Zo zorg je dat er maar één voorraadbeheerder bestaat voor je hele applicatie.
     public sealed class InventoryManager
     {
         private static readonly Lazy<InventoryManager> _instance =
