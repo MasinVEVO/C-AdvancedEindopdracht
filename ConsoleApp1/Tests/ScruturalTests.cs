@@ -3,7 +3,6 @@ using ConsoleApp1.Structural.Facade;
 using ConsoleApp1.Structural.Decorator;
 using VendingMachineApp.Models;
 using VendingMachineApp.Services;
-using VendingMachineApp.Patterns.Structural.Facade;
 
 namespace VendingMachineApp.Tests
 {

@@ -39,12 +39,6 @@ public class TaskManager
             task.Execute();
         }
     }
-  
-
-    public void AddTask(IThreadPoolTask task)
-    {
-        _taskQueue.Add(task);
-    }
     
     private void Worker()
     {
@@ -58,15 +52,6 @@ public class TaskManager
             {
                 Console.WriteLine(ex);
             }
-        }
-    }
-
-    private void Stop()
-    {
-        _taskQueue.CompleteAdding();
-        foreach (var worker in _workers)
-        {
-            worker.Join();
         }
     }
     

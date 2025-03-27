@@ -1,8 +1,6 @@
-﻿using ConsoleApp1.Structural.Facade;
-using VendingMachineApp.Models;
+﻿using VendingMachineApp.Models;
 
-
-namespace VendingMachineApp.Patterns.Structural.Facade;
+namespace ConsoleApp1.Structural.Facade;
 
 public class VendingMachineFacade
 {

@@ -1,5 +1,4 @@
-﻿// File: WaitingForSelectionState.cs
-
+﻿
 using MyApp.Models;
 using VendingMachineApp.Models;
 

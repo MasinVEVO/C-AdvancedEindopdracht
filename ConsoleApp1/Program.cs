@@ -3,10 +3,10 @@ using ConsoleApp1.BonusPatterns.Command;
 using ConsoleApp1.Concurrency.ProducerConsumer;
 using ConsoleApp1.Concurrency.ThreadPool;
 using ConsoleApp1.Patterns.Creational.Singleton;
+using ConsoleApp1.Structural.Facade;
 using MyApp.Models;
 using VendingMachineApp.Models;
 using VendingMachineApp.Services;
-using VendingMachineApp.Patterns.Structural.Facade;
 
 namespace ConsoleApp1
 {
