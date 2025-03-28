@@ -91,5 +91,7 @@ namespace VendingMachineApp.Models
         {
             return new VendingMachineMemento(Balance, SelectedProduct, SelectedProduct?.Stock ?? 0);
         }
+
+       
     }
 }

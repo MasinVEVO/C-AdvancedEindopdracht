@@ -32,15 +32,6 @@ public class DispenseProductCommand : ICommand
         {
             _vendingMachine.DispenseProduct(_product);
         }
-
-        /// <summary>
-        /// Implementeert de Undo operatie die vereist is door de ICommand interface
-        /// Opmerking: Deze methode is momenteel niet geïmplementeerd maar wel vereist door de interface
-        /// </summary>
-        public void Undo()
-        {
-            // Implementatie voor het ongedaan maken van een uitgifte operatie kan hier worden toegevoegd
-            // Bijvoorbeeld, het product terug in de voorraad plaatsen indien mogelijk
-            throw new NotImplementedException("Undo operatie wordt niet ondersteund voor het uitgeven van producten");
-        }
+        
+        
 }
