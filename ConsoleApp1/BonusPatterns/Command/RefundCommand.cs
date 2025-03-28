@@ -6,16 +6,23 @@ using VendingMachineApp.Services;
 
 namespace ConsoleApp1.BonusPatterns.Command;
 
-// Command Pattern om acties te encapsuleren (zoals refund).
-// Je voert het commando uit zonder details te hoeven kennen.
-
+/// <summary>
+/// Deze klasse implementeert het Command pattern voor het verwerken van refunds.
+/// Het biedt functionaliteit om een product terug te nemen en het aankoopbedrag terug te geven,
+/// met de mogelijkheid om deze actie ongedaan te maken.
+/// </summary>
 public class RefundCommand : ICommand
 {
     private readonly string _productName;
     private readonly decimal _amountRefunded;
     private readonly InventoryManager _inventoryManager;
     private readonly PaymentService _paymentService;
-    
+
+    /// <summary>
+    /// Initialiseert een nieuwe instance van de RefundCommand klasse met expliciete product informatie.
+    /// </summary>
+    /// <param name="productName">De naam van het product dat wordt gerefund</param>
+    /// <param name="amountRefunded">Het bedrag dat wordt terugbetaald</param>
     public RefundCommand(string productName, decimal amountRefunded)
     {
         _productName = productName;
@@ -24,6 +31,11 @@ public class RefundCommand : ICommand
         _paymentService = new PaymentService();
     }
 
+    /// <summary>
+    /// Initialiseert een nieuwe instance van de RefundCommand klasse op basis van een VendingMachine.
+    /// Gebruikt het geselecteerde product en diens prijs voor de refund.
+    /// </summary>
+    /// <param name="vendingMachine">De automaat waarvan het geselecteerde product wordt gerefund</param>
     public RefundCommand(VendingMachine vendingMachine)
     {
         Debug.Assert(vendingMachine.SelectedProduct != null, "vendingMachine.SelectedProduct != null");
@@ -33,6 +45,10 @@ public class RefundCommand : ICommand
         _paymentService = new PaymentService();
     }
 
+    /// <summary>
+    /// Voert de refund uit door het product terug te voegen aan de inventaris
+    /// en het aankoopbedrag terug te geven.
+    /// </summary>
     public void Execute()
     {
         var product = _inventoryManager.GetProduct(_productName);
@@ -46,13 +62,16 @@ public class RefundCommand : ICommand
             Console.WriteLine($"Product {_productName} is niet gevonden in de inventaris.");
         }
     }
-    
 
+    /// <summary>
+    /// Maakt de refund ongedaan door het product weer uit de inventaris te verwijderen.
+    /// Dit is de inverse operatie van Execute().
+    /// </summary>
     public void Undo()
     {
         var product = _inventoryManager.GetProduct(_productName);
 
-        if (product != null && product.Stock > 0) 
+        if (product != null && product.Stock > 0)
         {
             _inventoryManager.ReduceStock(_productName);
             Console.WriteLine($"Refund geannuleerd: ${_amountRefunded} hersteld product {_productName}");
