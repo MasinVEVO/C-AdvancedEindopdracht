@@ -7,7 +7,7 @@ namespace ConsoleApp1.Behavioral.Observer
     /// <summary>
     /// Klasse die klanten notificeert over voorraadwijzigingen volgens het Observer patroon.
     /// </summary>
-    internal class CustomerNotifier : IStockObserver
+    public class CustomerNotifier : IStockObserver
     {
         
         // De naam van de klant die genotificeerd moet worden

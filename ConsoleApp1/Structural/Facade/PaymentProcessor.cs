@@ -5,6 +5,6 @@ public class PaymentProcessor
     public bool ProcessPayment(decimal amount)
     {
         // Process payment
-        return true;
+        return amount > 0; // Simulate payment processing
     }
 }

@@ -17,6 +17,7 @@ public class RefundCommand : ICommand
     private readonly decimal _amountRefunded;
     private readonly InventoryManager _inventoryManager;
     private readonly PaymentService _paymentService;
+    private readonly VendingMachine _vendingMachine;
 
     /// <summary>
     /// Initialiseert een nieuwe instance van de RefundCommand klasse met expliciete product informatie.
@@ -38,11 +39,24 @@ public class RefundCommand : ICommand
     /// <param name="vendingMachine">De automaat waarvan het geselecteerde product wordt gerefund</param>
     public RefundCommand(VendingMachine vendingMachine)
     {
-        Debug.Assert(vendingMachine.SelectedProduct != null, "vendingMachine.SelectedProduct != null");
         _productName = vendingMachine.SelectedProduct.Name;
         _amountRefunded = vendingMachine.SelectedProduct.Price;
         _inventoryManager = InventoryManager.Instance;
         _paymentService = new PaymentService();
+        _vendingMachine = vendingMachine;
+
+        if (vendingMachine.SelectedProduct != null)
+        {
+            _productName = vendingMachine.SelectedProduct.Name;
+            _amountRefunded = vendingMachine.SelectedProduct.Price;
+        }
+        else
+        {
+            _productName = string.Empty;
+            _amountRefunded = 0;
+        }
+         
+
     }
 
     /// <summary>

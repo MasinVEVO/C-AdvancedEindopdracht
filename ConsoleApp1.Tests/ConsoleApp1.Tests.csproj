@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Akka.TestKit" Version="1.5.40" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0-preview-25107-01" />
+      <PackageReference Include="Moq" Version="4.20.72" />
+      <PackageReference Include="MSTest.TestAdapter" Version="3.9.0-preview.25167.10" />
+      <PackageReference Include="MSTest.TestFramework" Version="3.9.0-preview.25167.10" />
+    </ItemGroup>
+
+</Project>
