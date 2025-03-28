@@ -39,11 +39,9 @@ public class RefundCommand : ICommand
     /// <param name="vendingMachine">De automaat waarvan het geselecteerde product wordt gerefund</param>
     public RefundCommand(VendingMachine vendingMachine)
     {
-        _productName = vendingMachine.SelectedProduct.Name;
-        _amountRefunded = vendingMachine.SelectedProduct.Price;
+        _vendingMachine = vendingMachine ?? throw new ArgumentNullException(nameof(vendingMachine));
         _inventoryManager = InventoryManager.Instance;
         _paymentService = new PaymentService();
-        _vendingMachine = vendingMachine;
 
         if (vendingMachine.SelectedProduct != null)
         {
@@ -65,6 +63,14 @@ public class RefundCommand : ICommand
     /// </summary>
     public void Execute()
     {
+        if (_vendingMachine != null)
+        {
+            _vendingMachine.Balance = 0;
+            Console.WriteLine($"Refund uitgevoerd: ${_amountRefunded} voor product {_productName}");
+            return;
+        }
+
+        // Original product-based refund logic
         var product = _inventoryManager.GetProduct(_productName);
         if (product != null)
         {
