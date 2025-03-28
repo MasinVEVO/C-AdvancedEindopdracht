@@ -29,7 +29,7 @@ namespace ConsoleApp1
             var vendingMachine = new VendingMachine();
             var facade = new VendingMachineFacade();
             var orderQueue = new OrderProcessingQueue(10);
-            var taskManager = new TaskManager(10);
+            var taskManager = new TaskManager(20);
             VendingMachineMemento savedState = null;
 
             bool running = true;
@@ -62,7 +62,6 @@ namespace ConsoleApp1
                         else
                             Console.WriteLine("Ongeldig bedrag.");
                         break;
-
                     case "3": // State
                         Console.Write("Voer de productnaam in: ");
                         vendingMachine.SelectProduct(Console.ReadLine());

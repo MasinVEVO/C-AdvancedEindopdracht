@@ -15,10 +15,13 @@ namespace VendingMachineApp.Tests
             var taskManager = new TaskManager(10);
             bool taskCompleted = false;
 
-            taskManager.EnqueueTask(() => taskCompleted = true);
-            taskManager.StartProcessing();
+            taskManager.StartProcessing(); 
 
-            Assert.That(taskCompleted, Is.True, " TaskManager verwerkt taak correct.");
+            taskManager.EnqueueTask(() => taskCompleted = true);
+
+            Thread.Sleep(500);
+
+            Assert.That(taskCompleted, Is.True, "TaskManager verwerkt taak correct.");
         }
 
         [Test]
